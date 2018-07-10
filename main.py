@@ -21,7 +21,7 @@ parser.add_argument('-i', '--image',
 def main():
     args = parser.parse_args()
 
-    generated = generate_json.GenarateJson()
+    generated = generate_json.GenerateJson()
     request_data = json.dumps(generated.generate(args.image))
 
     sent = send_request.SendRequest()

@@ -1,7 +1,7 @@
 import base64
 
 
-class GenarateJson(object):
+class GenerateJson(object):
     def __init__(self):
         self.request_json = {}
 

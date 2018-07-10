@@ -35,12 +35,10 @@ class MakePurchaseHistory(object):
                 break
 
         goods_index = list(map(lambda tmp: tmp - i, price_index))
-
         goods_list = text_list[goods_index[0]:(goods_index[-1] + 1)]
         price_list = text_list[price_index[0]:(price_index[-1] + 1)]
         price_list_str = list(map(lambda p: re.sub(r'\D', '', p), price_list))
-        price_list_int = list(map(lambda p: int(p), price_list_str))
 
-        purchased = [[g, p] for g, p in zip(goods_list, price_list_int)]
+        purchased = [[g, p] for g, p in zip(goods_list, price_list_str)]
 
         return purchased
