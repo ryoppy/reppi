@@ -160,3 +160,6 @@ fabric.properties
 
 # .idea
 .idea
+
+# dat
+*.dat
