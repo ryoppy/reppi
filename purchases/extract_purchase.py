@@ -41,6 +41,6 @@ class MakePurchaseHistory(object):
         price_list_str = list(map(lambda p: re.sub(r'\D', '', p), price_list))
         price_list_int = list(map(lambda p: int(p), price_list_str))
 
-        purchase_history = tuple(zip(goods_list, price_list_int))
+        purchased = [[g, p] for g, p in zip(goods_list, price_list_int)]
 
-        return purchase_history
+        return purchased
