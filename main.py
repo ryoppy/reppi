@@ -1,6 +1,6 @@
 import json
 import argparse
-from purchases import generate_json, send_request, extract_purchase
+from purchases import generate_json, send_request, extract_purchase, insert_into_purchases
 
 
 parser = argparse.ArgumentParser(
@@ -29,6 +29,8 @@ def main():
 
     purchase_histories = extract_purchase.MakePurchaseHistory()
     purchased = purchase_histories.make_purchase_history(response)
+
+    insert_into_purchases.InsertIntoPurchases(purchased)
 
     return purchased
 
